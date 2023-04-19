@@ -22,31 +22,48 @@ const userSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  allow_instant_bookin: {
-    type: Number,
+  allow_instant_booking: {
+    type: Boolean,
+    default : false
+  },
+  Greate_for : {
+    type : String,
+  },
+  Regions : {
+    type : String
+  },
+  Group_size : {
+    type : String
+  },
+  numberOfGuests : {
+    type : Number
   },
   price_per_each_additional_guests: {
     type: Number,
   },
-  minimum_numberOf_hours_per_reservation: {
-    type: Number,
+  minimum_numberof_hours_per_reservation: {
+    type: String,
   },
-  maximum_numberOf_hours_per_reservation: {
+  maximum_numberof_hours_per_reservation: {
     type: Number,
   },
   appointmentDuration: {
-    type: String,
+    type: Number,
   },
   time_between_appointment: {
     type: String,
+  },
+  recurring_period : {
+    type : Boolean
   },
   start_date: {
     type: Date,
   },
   end_date: {
-    type: Date,
-  },
-});
+    type: Date
+  }
+}
+);
 
 const userModel = mongoose.model("users", userSchema);
 
